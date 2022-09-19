@@ -1,4 +1,4 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
+// ignore_for_file: public_member_api_docs, sort_constructors_first, unused_element
 import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
@@ -41,7 +41,7 @@ class Article {
     return <String, dynamic>{
       'id': id,
       'title': title,
-      'content': content,
+      'abstract': content,
       'byline': byline,
       'media': media!.map((x) => x.toMap()).toList(),
       'published_date': publishedDate?.toIso8601String(),
@@ -52,12 +52,12 @@ class Article {
     return Article(
       id: map['id'] != null ? map['id'] as num : null,
       title: map['title'] != null ? map['title'] as String : null,
-      content: map['content'] != null ? map['content'] as String : null,
+      content: map['abstract'] != null ? map['abstract'] as String : null,
       byline: map['byline'] != null ? map['byline'] as String : null,
       media: map['media'] != null
           ? List<Media>.from(
-              (map['media'] as List<int>)
-                  .map<Media?>((x) => Media.fromMap(x as Map<String, dynamic>)),
+              (map['media'] as List)
+                  .map<Media>((x) => Media.fromMap(x as Map<String, dynamic>)),
             )
           : null,
       publishedDate: map['published_date'] != null
@@ -122,7 +122,7 @@ class Media {
   factory Media.fromMap(Map<String, dynamic> map) {
     return Media(
       metadata: List<_MetaData>.from(
-        (map['metadata'] as List<int>).map<_MetaData>(
+        (map['media-metadata'] as List).map<_MetaData>(
           (x) => _MetaData.fromMap(x as Map<String, dynamic>),
         ),
       ),
@@ -150,8 +150,8 @@ class Media {
 
 class _MetaData {
   final String? url;
-  final double? width;
-  final double? height;
+  final int? width;
+  final int? height;
   _MetaData({
     this.url,
     this.width,
@@ -160,8 +160,8 @@ class _MetaData {
 
   _MetaData copyWith({
     String? url,
-    double? width,
-    double? height,
+    int? width,
+    int? height,
   }) {
     return _MetaData(
       url: url ?? this.url,
@@ -181,8 +181,8 @@ class _MetaData {
   factory _MetaData.fromMap(Map<String, dynamic> map) {
     return _MetaData(
       url: map['url'] != null ? map['url'] as String : null,
-      width: map['width'] != null ? map['width'] as double : null,
-      height: map['height'] != null ? map['height'] as double : null,
+      width: map['width'] != null ? map['width'] as int : null,
+      height: map['height'] != null ? map['height'] as int : null,
     );
   }
 

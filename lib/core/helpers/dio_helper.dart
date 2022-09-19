@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:nyt_app/core/error/failures.dart';
@@ -47,7 +45,6 @@ Response responseHandler(Response response) {
     case 200:
     case 201:
     case 202:
-      
       return response;
     case 500:
       throw ServerFailure('Server Error please retry later');

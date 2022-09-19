@@ -18,11 +18,11 @@ class ArticleDatasourceImpl extends IArticleDatasource {
   ///* @param period default('all-section')
   @override
   Future<List<Article>> getMostviewedArticles(
-      {String section = 'all-section', int period = 7}) async {
+      {String section = 'all-sections', int period = 7}) async {
     try {
       //* Request to mostviewed in section within period
       final response =
-          await _dio.client.get('mostviewed/$section/$period.json');
+          await _dio.client.get('/mostviewed/$section/$period.json');
       final List<Article> articles = (response.data['results'] as List)
           .map((e) => Article.fromMap(e))
           .toList();

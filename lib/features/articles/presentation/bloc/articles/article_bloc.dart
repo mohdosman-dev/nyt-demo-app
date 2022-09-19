@@ -7,7 +7,7 @@ import 'package:nyt_app/features/articles/presentation/bloc/articles/article_eve
 import 'package:nyt_app/features/articles/presentation/bloc/articles/article_states.dart';
 
 class ArticleBloc extends Bloc<IArticleEvent, IArticleState> {
-  final GetAllArticlesUsercase getAllArticles;
+  final GetAllArticlesUsecase getAllArticles;
 
   ArticleBloc(this.getAllArticles) : super(InitalArticleState()) {
     on((event, emit) async {
@@ -19,6 +19,8 @@ class ArticleBloc extends Bloc<IArticleEvent, IArticleState> {
         emit(_mapArticleOrFailure(result));
       } else if (event is GetArticlesRefreshEvent) {
         emit(LoadingArticleState());
+        final result = await getAllArticles();
+        emit(_mapArticleOrFailure(result));
       }
     });
   }
