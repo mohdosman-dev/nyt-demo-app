@@ -6,6 +6,7 @@ import 'package:flutter/foundation.dart';
 class Article {
   final num? id;
   final String? title;
+  final String? url;
   final String? content;
   final String? byline;
   final List<Media>? media;
@@ -13,6 +14,7 @@ class Article {
   Article({
     this.id,
     this.title,
+    this.url,
     this.content,
     this.byline,
     this.media,
@@ -22,6 +24,7 @@ class Article {
   Article copyWith({
     num? id,
     String? title,
+    String? url,
     String? content,
     String? byline,
     List<Media>? media,
@@ -30,6 +33,7 @@ class Article {
     return Article(
       id: id ?? this.id,
       title: title ?? this.title,
+      url: url ?? this.url,
       content: content ?? this.content,
       byline: byline ?? this.byline,
       media: media ?? this.media,
@@ -41,6 +45,7 @@ class Article {
     return <String, dynamic>{
       'id': id,
       'title': title,
+      'url': url,
       'abstract': content,
       'byline': byline,
       'media': media!.map((x) => x.toMap()).toList(),
@@ -52,6 +57,7 @@ class Article {
     return Article(
       id: map['id'] != null ? map['id'] as num : null,
       title: map['title'] != null ? map['title'] as String : null,
+      url: map['url'] != null ? map['url'] as String : null,
       content: map['abstract'] != null ? map['abstract'] as String : null,
       byline: map['byline'] != null ? map['byline'] as String : null,
       media: map['media'] != null
