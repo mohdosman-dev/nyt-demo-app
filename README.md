@@ -2,7 +2,7 @@
 
 ## (New York Times Most Viewed Article)
 
-A Flutter app showcasing a list of popular articles from New York Times.
+A Flutter app showcasing a list of popular articles from [**New York Times**](https://www.nytimes.com/trending/).
 
 So the application "Architect your Flutter project using BLoC pattern" is complete.
 
@@ -12,14 +12,14 @@ So the application "Architect your Flutter project using BLoC pattern" is comple
 
 ### Requirement
 
-Berikut beberapa hal yang perlu Anda persiapkan sebelum setup Boilerplate ini:
+Here are some things you need to prepare before this project setup:
 
 1. Flutter SDK Stable (Latest Version) [Install](https://flutter.dev/docs/get-started/install)
 2. Android Studio [Install](https://developer.android.com/studio)
 3. Visual Studio Code (Optional) [Install](https://code.visualstudio.com/)
-4. Extension **Dart** dan **Flutter**:
-   - Pengguna **Intellij Platform** ([Dart](https://plugins.jetbrains.com/plugin/6351-dart), [Flutter](https://plugins.jetbrains.com/plugin/9212-flutter))
-   - Pengguna **Visual Studio Code** ([Dart](https://marketplace.visualstudio.com/items?itemName=Dart-Code.dart-code), [Flutter](https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter))
+4. Extension **Dart** and **Flutter**:
+   - **Intellij Platform** ([Dart](https://plugins.jetbrains.com/plugin/6351-dart), [Flutter](https://plugins.jetbrains.com/plugin/9212-flutter))
+   - **Visual Studio Code** ([Dart](https://marketplace.visualstudio.com/items?itemName=Dart-Code.dart-code), [Flutter](https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter))
 
 ### Setup
 
